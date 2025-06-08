@@ -1,0 +1,32 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+}
+
+.about-title {
+    position: relative;
+    display: inline-block; /* Added to contain the image properly */
+}
+
+.about-title h1 {
+    padding: 0px 30px;
+    font-size: 80px;
+    font-weight: 600;
+    position: relative; /* Added to ensure text stays above image */
+    z-index: 2; /* Added to keep text in front */
+    margin: 0; /* Added to remove default margins */
+}
+
+.about-title img {
+    position: absolute;
+    bottom: -1px; /* Adjusted positioning */
+    right: -1px; /* Adjusted positioning */
+    z-index: -1;
+    width: auto; /* Added for responsive behavior */
+    height: 60px; /* Adjust this value based on your image size */
+    opacity: 0.8; /* Optional: adds subtle transparency */
+}
