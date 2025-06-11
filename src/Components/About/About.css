@@ -105,3 +105,8 @@ about-achievement h1{
     transform: scale(1.12);
     transition: 0.5s;
 }
+.skill-html { width: 90%; }
+.skill-react { width: 95%; }
+.skill-js { width: 85%; }
+.skill-next { width: 80%; }
+
