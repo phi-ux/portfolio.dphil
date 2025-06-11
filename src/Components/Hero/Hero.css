@@ -1,30 +1,46 @@
 .hero {
+    min-height: 100vh; /* Added: Makes it full viewport height */
     display: flex;
     align-items: center;
+    justify-content: center; /* Added: Centers content vertically */
     flex-direction: column;
     gap: 35px;
+    padding: 20px; /* Added: Prevents content from touching edges */
 }
+
 .hero img {
-    margin: 150px;
+    margin: 50px 0; /* Changed: Reduced excessive margin, only top/bottom */
+    width: 200px; /* Added: Control image size */
+    height: 200px; /* Added: Control image size */
+    border-radius: 50%; /* Added: Makes it circular like your design */
+    object-fit: cover; /* Added: Ensures proper image scaling */
 }
+
 .hero h1 {
     text-align: center;
     width: 70%;
     font-size: 90px;
     font-weight: 600;
+    margin: 0; /* Added: Remove default margins */
+    line-height: 1.1; /* Added: Better line spacing */
 }
+
 .hero h1 span {
     background: linear-gradient(270deg, #DFB908 10%, #B415FF 100%);
-    background-clip: text; /* standard property for completeness */
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .hero p {
     width: 60%;
     text-align: center;
     font-size: 24px;
     line-height: 40px;
+    margin: 0; /* Added: Remove default margins */
+    color: #cccccc; /* Added: Better text color for readability */
 }
+
 .hero-action {
     display: flex;
     align-items: center;
@@ -33,22 +49,91 @@
     font-weight: 500;
     margin-bottom: 50px;
 }
+
 .hero-connect {
     padding: 25px 45px;
     border-radius: 50px;
     background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
     cursor: pointer;
+    border: 2px solid transparent; /* Added: For smooth hover transition */
+    transition: all 0.3s ease; /* Added: Smooth hover effect */
+    color: white; /* Added: Ensure text is visible */
 }
+
 .hero-resume {
     padding: 25px 75px;
     border-radius: 50px;
     border: 2px solid #FFF;
     cursor: pointer;
+    transition: all 0.3s ease; /* Added: Smooth hover effect */
+    background: transparent; /* Added: Explicit background */
+    color: white; /* Added: Text color */
+}
 
-}
-.hero-connect:hover{
+.hero-connect:hover {
     border: 2px solid white;
+    transform: translateY(-2px); /* Added: Subtle lift effect */
 }
-.hero-resume:hover{
-    border: #b415ff;
+
+.hero-resume:hover {
+    border-color: #b415ff; /* Fixed: Added missing 'color' */
+    color: #b415ff; /* Added: Change text color on hover */
+    transform: translateY(-2px); /* Added: Subtle lift effect */
+}
+
+/* Added: Responsive design */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 70px;
+        width: 80%;
+    }
+    
+    .hero p {
+        width: 70%;
+        font-size: 20px;
+        line-height: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero img {
+        width: 150px;
+        height: 150px;
+        margin: 30px 0;
+    }
+    
+    .hero h1 {
+        font-size: 50px;
+        width: 90%;
+    }
+    
+    .hero p {
+        width: 85%;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    
+    .hero-action {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .hero-connect,
+    .hero-resume {
+        padding: 20px 35px;
+        font-size: 20px;
+        width: 200px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
